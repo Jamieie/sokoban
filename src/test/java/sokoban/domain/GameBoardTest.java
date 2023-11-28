@@ -12,19 +12,9 @@ import static org.assertj.core.api.Assertions.*;
 class GameBoardTest {
     private GameBoard game;
 
-    private Map<Integer, String> symbolMap1 = Map.of(
-            0, "#####",
-            1, "#OoP#",
-            2, "#####");
+    private Map<Integer, String> symbolMap1 = Map.of(0, "#####", 1, "#OoP#", 2, "#####");
 
-    private Map<Integer, String> symbolMap2 = Map.of(
-            0, "  #######",
-            1, "###  O  ###",
-            2, "#    o    #",
-            3, "# Oo P oO #",
-            4, "###  o  ###",
-            5, " #   O  #",
-            6, " ########");
+    private Map<Integer, String> symbolMap2 = Map.of(0, "  #######", 1, "###  O  ###", 2, "#    o    #", 3, "# Oo P oO #", 4, "###  o  ###", 5, " #   O  #", 6, " ########");
 
     @DisplayName("입력 기호를 숫자로 변환하여 맵 저장하는 기능")
     @Test
@@ -80,5 +70,13 @@ class GameBoardTest {
         game = new GameBoard(2, symbolMap2);
         int balls = game.findBalls();
         assertThat(balls).isEqualTo(4);
+    }
+
+    @DisplayName("플레이어 위치 찾는 기능")
+    @Test
+    void findPlayerPosition() {
+        game = new GameBoard(2, symbolMap2);
+        List<Integer> position = game.findPlayerPosition();
+        assertThat(position).containsExactly(4, 6);
     }
 }
