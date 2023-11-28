@@ -73,4 +73,12 @@ class GameBoardTest {
         int halls = game.findHalls();
         assertThat(halls).isEqualTo(4);
     }
+
+    @DisplayName("공의 개수 구하는 기능")
+    @Test
+    void findBalls() {
+        game = new GameBoard(2, symbolMap2);
+        int balls = game.findBalls();
+        assertThat(balls).isEqualTo(4);
+    }
 }

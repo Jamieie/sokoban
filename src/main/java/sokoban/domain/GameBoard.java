@@ -81,4 +81,14 @@ public class GameBoard {
         }
         return hallCount;
     }
+
+    public int findBalls() {
+        int ballCount = 0;
+        for (int i = 0; i < map.size(); i++) {
+            List<Integer> row = map.get(i);
+            int ballsInRow = (int) row.stream().filter(value -> value.equals(SymbolTable.BALL.getValue())).count();
+            ballCount += ballsInRow;
+        }
+        return ballCount;
+    }
 }
