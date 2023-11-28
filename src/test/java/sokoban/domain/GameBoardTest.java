@@ -65,4 +65,12 @@ class GameBoardTest {
         int length = game.getLength();
         assertThat(length).isEqualTo(7);
     }
+
+    @DisplayName("구멍의 개수 구하는 기능")
+    @Test
+    void findHalls() {
+        game = new GameBoard(2, symbolMap2);
+        int halls = game.findHalls();
+        assertThat(halls).isEqualTo(4);
+    }
 }

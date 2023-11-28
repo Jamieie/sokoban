@@ -71,4 +71,14 @@ public class GameBoard {
     public int getLength() {
         return map.size();
     }
+
+    public int findHalls() {
+        int hallCount = 0;
+        for (int i = 0; i < map.size(); i++) {
+            List<Integer> row = map.get(i);
+            int hallsInRow = (int) row.stream().filter(value -> value.equals(SymbolTable.HALL.getValue())).count();
+            hallCount += hallsInRow;
+        }
+        return hallCount;
+    }
 }
