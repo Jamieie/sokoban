@@ -50,11 +50,19 @@ class GameBoardTest {
         assertThat(map.get(6)).isEqualTo(Arrays.asList(0, 4, 4, 4, 4, 4, 4, 4, 4));
     }
 
-    @DisplayName("가로 길이 구하는 기능")
+    @DisplayName("map의 가로 길이 구하는 기능")
     @Test
     void getWidth() {
         game = new GameBoard(2, symbolMap2);
         int width = game.getWidth();
         assertThat(width).isEqualTo(11);
+    }
+
+    @DisplayName("map의 세로 길이 구하는 기능")
+    @Test
+    void getLength() {
+        game = new GameBoard(2, symbolMap2);
+        int length = game.getLength();
+        assertThat(length).isEqualTo(7);
     }
 }

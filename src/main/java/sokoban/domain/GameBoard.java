@@ -67,4 +67,8 @@ public class GameBoard {
         }
         return longest;
     }
+
+    public int getLength() {
+        return map.size();
+    }
 }
