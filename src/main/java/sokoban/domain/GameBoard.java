@@ -55,4 +55,16 @@ public class GameBoard {
     public Map<Integer, List<Integer>> getMap() {
         return map;
     }
+
+    public int getWidth() {
+        int longest = 0;
+        for (int i = 0; i < map.size(); i++) {
+            List<Integer> row = map.get(i);
+            int width = row.size();
+            if (longest < width) {
+                longest = width;
+            }
+        }
+        return longest;
+    }
 }
