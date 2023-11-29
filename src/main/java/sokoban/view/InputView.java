@@ -23,10 +23,12 @@ public class InputView {
         Map<Integer, String> map = new HashMap<>();
         int key = 0;
         String input = "";
-        while (!input.equals(SymbolTable.SEPARATOR.getSymbol())) {
+        while (!input.equals(SymbolTable.SEPARATOR.getSymbol()) && scanner.hasNext()) {
             input = scanner.nextLine();
-            map.put(key, input);
-            key++;
+            if (!input.equals(SymbolTable.SEPARATOR.getSymbol())) {
+                map.put(key, input);
+                key++;
+            }
         }
         return map;
     }

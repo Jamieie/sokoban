@@ -25,6 +25,7 @@ public class Application {
             int stage = game.getStage();
             Map<Integer, List<Integer>> map = game.getMap();
             outputView.printMap(stage, map);
+            System.out.println();
             outputView.printMapInfo(game.getWidth(), game.getLength(), game.findHalls(), game.findBalls(), game.findPlayerPosition());
             System.out.println();
         }
