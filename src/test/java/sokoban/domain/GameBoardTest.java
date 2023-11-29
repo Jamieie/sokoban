@@ -76,7 +76,8 @@ class GameBoardTest {
     @Test
     void findPlayerPosition() {
         game = new GameBoard(2, symbolMap2);
-        List<Integer> position = game.findPlayerPosition();
-        assertThat(position).containsExactly(4, 6);
+        Map<String, Integer> position = game.findPlayerPosition();
+        assertThat(position.get("column")).isEqualTo(4);
+        assertThat(position.get("row")).isEqualTo(6);
     }
 }

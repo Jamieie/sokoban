@@ -92,14 +92,14 @@ public class GameBoard {
         return ballCount;
     }
 
-    public List<Integer> findPlayerPosition() {
-        List<Integer> position = new ArrayList<>();
+    public Map<String, Integer> findPlayerPosition() {
+        Map<String, Integer> position = new HashMap<>();
         for (int i = 0; i < map.size(); i++) {
             List<Integer> row = map.get(i);
             if (row.contains(SymbolTable.PLAYER.getValue())) {
                 int index = row.indexOf(SymbolTable.PLAYER.getValue());
-                position.add(i+1);
-                position.add(index+1);
+                position.put("column", i+1);
+                position.put("row", index+1);
             }
         }
         return position;
