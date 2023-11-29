@@ -28,7 +28,6 @@ public class OutputView {
                 if (value.equals(SymbolTable.WALL.getValue())) {
                     System.out.print(SymbolTable.WALL.getSymbol());
                 }
-                System.out.println();
             }
             System.out.println();
         }
