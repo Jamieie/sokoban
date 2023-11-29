@@ -34,6 +34,25 @@ public class outputView {
         }
     }
 
+    public void printWidth(int width) {
+        System.out.println("가로크기: " + width);
+    }
 
+    public void printLength(int length) {
+        System.out.println("세로크기: " + length);
+    }
 
+    public void printHalls(int halls) {
+        System.out.println("구멍의 수: " + halls);
+    }
+
+    public void printBalls(int balls) {
+        System.out.println("공의 수: " + balls);
+    }
+
+    public void printPosition(Map<String, Integer> position) {
+        Integer column = position.get("column");
+        Integer row = position.get("row");
+        System.out.println("플레이어의 위치: " + column + "행 " + row + "열");
+    }
 }
