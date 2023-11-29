@@ -5,7 +5,7 @@ import sokoban.domain.SymbolTable;
 import java.util.List;
 import java.util.Map;
 
-public class outputView {
+public class OutputView {
     public void printMap(int stage, Map<Integer, List<Integer>> map) {
         System.out.println("Stage " + stage);
         System.out.println();
